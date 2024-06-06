@@ -1,4 +1,5 @@
 # DE_net
+![image](https://github.com/Ilya-Zhirukhin/DE_net/assets/99948155/c20b1eac-4190-43ee-b9ea-d9724fb03045)
 
 
 ![image](https://github.com/Ilya-Zhirukhin/DE_net/assets/99948155/5ffca76f-6c53-401e-a86c-aedc5da111a2)
