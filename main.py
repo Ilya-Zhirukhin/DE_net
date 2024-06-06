@@ -5,6 +5,8 @@ from config import web3, token_contract
 import requests
 from dotenv import load_dotenv
 import os
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 load_dotenv()
 
@@ -16,9 +18,11 @@ POLYGONSCAN_API_URL = "https://api.polygonscan.com/api"
 class AddressRequest(BaseModel):
     addresses: List[str]
 
-@app.get("/")
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.get("/", response_class=FileResponse)
 async def read_root():
-    return {"message": "Hello, World!"}
+    return "static/index.html"
 
 @app.get("/get_balance")
 async def get_balance(address: str = Query(..., description="The Ethereum address to get the balance for")):
